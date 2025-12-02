@@ -128,7 +128,7 @@ export default function CustomTable({
                                       <option className="text-custom-white bg-custom-black" value={1000}>1000</option>
                                       <option className="text-custom-white bg-custom-black" value={2000}>2000</option>
                                     </select>
-                                  : <input defaultValue={eachData} onBlur={e => {
+                                  : <input defaultValue={eachData} type={index > 1 ? "number" : "text"} onBlur={e => {
                                       tempData[indexRow][index] = e.target.value;
                                     }} />
                               }
