@@ -129,7 +129,13 @@ export default function CustomTable({
                                       <option className="text-custom-white bg-custom-black" value={2000}>2000</option>
                                     </select>
                                   : <input defaultValue={eachData} type={index > 1 ? "number" : "text"} onBlur={e => {
+                                    // if (index > 1 && e.target.value)
+                                    if (!Number.isNaN(parseFloat(e.target.value)) && index > 1) {
                                       tempData[indexRow][index] = e.target.value;
+                                    }
+                                    else if (index <= 1) {
+                                      tempData[indexRow][index] = e.target.value;
+                                    }
                                     }} />
                               }
                               </td>
